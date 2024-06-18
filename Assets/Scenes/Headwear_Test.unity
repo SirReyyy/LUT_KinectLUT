@@ -234,6 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 342476253}
   - component: {fileID: 342476252}
+  - component: {fileID: 342476255}
   m_Layer: 8
   m_Name: BackgroundImage
   m_TagString: Untagged
@@ -284,6 +285,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!222 &342476255
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342476251}
+  m_CullTransparentMesh: 1
 --- !u!1 &635523664
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,10 +635,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LUT_Horns_Brown
       objectReference: {fileID: 0}
-    - target: {fileID: 5282597482125740932, guid: a445808dbcfe9ef4c88bc96cb295422c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 9142031947999369130, guid: a445808dbcfe9ef4c88bc96cb295422c, type: 3}
+      propertyPath: foregroundCamera
+      value: 
+      objectReference: {fileID: 196037494}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -814,6 +823,7 @@ GameObject:
   - component: {fileID: 1650519741}
   - component: {fileID: 1650519740}
   - component: {fileID: 1650519739}
+  - component: {fileID: 1650519742}
   m_Layer: 0
   m_Name: KinectController
   m_TagString: Untagged
@@ -916,6 +926,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1650519742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650519735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a559e12c3f373eb4c8d0e1096fec8a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIndex: -1
+  foregroundCamera: {fileID: 0}
+  colorCameraResolution: 1
+  computeBodyTexOnly: 0
+  invertAlphaColorMask: 0
+  erodeIterations0: 0
+  dilateIterations: 0
+  erodeIterations: 0
+  bodyBlurFilter: 1
+  bodyContourColor: {r: 0, g: 0, b: 0, a: 1}
+  debugText: {fileID: 0}
 --- !u!1 &2125201531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,67 +1051,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &2957682644609224185
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2872957772817314313, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: foregroundCamera
-      value: 
-      objectReference: {fileID: 196037494}
-    - target: {fileID: 8614966920833747003, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_Name
-      value: VikingHat
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.00000004371139
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8614966920834110491, guid: f92e24c860e5823479fead973bc797ec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f92e24c860e5823479fead973bc797ec, type: 3}
 --- !u!1001 &8470205218217633082
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1131,15 +1103,76 @@ PrefabInstance:
       propertyPath: m_Name
       value: LUT_Horns_Red
       objectReference: {fileID: 0}
-    - target: {fileID: 5561445835574812063, guid: 3ca40563651bb4b4793cd84bdebef358, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 6351225135522383074, guid: 3ca40563651bb4b4793cd84bdebef358, type: 3}
+      propertyPath: foregroundCamera
+      value: 
+      objectReference: {fileID: 196037494}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ca40563651bb4b4793cd84bdebef358, type: 3}
+--- !u!1001 &9092467678624914036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3155725069748445748, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: foregroundCamera
+      value: 
+      objectReference: {fileID: 196037494}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3609980429368749343, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509225509554218443, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
+      propertyPath: m_Name
+      value: LUT_Horns_Blue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ebc14257ad38f942bbc7769f9e55862, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1148,9 +1181,9 @@ SceneRoots:
   - {fileID: 635523670}
   - {fileID: 795478997}
   - {fileID: 196037495}
-  - {fileID: 2957682644609224185}
   - {fileID: 2125201532}
   - {fileID: 1545175943}
   - {fileID: 1650519741}
   - {fileID: 859519937}
+  - {fileID: 9092467678624914036}
   - {fileID: 8470205218217633082}
